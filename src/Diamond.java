@@ -14,7 +14,7 @@ public class Diamond extends Shape implements BeDrawn{
     private String fill;
     private int transpFill;
     private BufferedImage image;
-    private static Diamond diamond;
+    private static Diamond diamond;		//Singleton
     
     private Diamond(FileReader read, BufferedImage newImage) throws IOException {
         x = read.nextInt();

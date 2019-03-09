@@ -16,7 +16,7 @@ public class Triangle extends Shape implements BeDrawn{
     private String fill;
     private int transpFill;
     private BufferedImage image;
-    private static Triangle triangle;
+    private static Triangle triangle;	//Singleton
     
     private Triangle(FileReader read, BufferedImage newImage) throws IOException {
         x1 = read.nextInt();

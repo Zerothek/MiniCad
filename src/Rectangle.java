@@ -14,7 +14,7 @@ public class Rectangle extends Shape implements BeDrawn{
     private String fill;
     private int transpFill;
     private BufferedImage image;
-    private static Rectangle rectangle;
+    private static Rectangle rectangle;		//Singleton
     
     private Rectangle(FileReader read, BufferedImage newImage) throws IOException {
         xUp = read.nextInt();

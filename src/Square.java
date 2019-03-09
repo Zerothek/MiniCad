@@ -13,7 +13,7 @@ public class Square extends Shape implements BeDrawn{
     private String fill;
     private int transpFill;
     private BufferedImage image;
-    private static Square square;
+    private static Square square;	//Singleton
     
     private Square(FileReader read, BufferedImage newImage) throws IOException {
         xUp = read.nextInt();

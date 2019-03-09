@@ -13,7 +13,7 @@ public class Circle extends Shape implements BeDrawn{
     private String fill;
     private int transpFill;
     private BufferedImage image;
-    private static Circle circle;
+    private static Circle circle;	//Singleton
     
     private Circle(FileReader read, BufferedImage newImage) throws IOException {
         x = read.nextInt();

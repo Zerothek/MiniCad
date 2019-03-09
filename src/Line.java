@@ -12,7 +12,7 @@ public class Line extends Shape implements BeDrawn{
     private static String lineColor;
     private static int transpLine;
     private static BufferedImage image;
-    private static Line line;
+    private static Line line;	//Singleton
     
     private Line(FileReader read, BufferedImage newImage) throws IOException {
         xDown = read.nextInt();

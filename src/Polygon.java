@@ -12,7 +12,7 @@ public class Polygon extends Shape implements BeDrawn{
     private String fill;
     private int transpFill;
     private BufferedImage image;
-    private static Polygon polygon;
+    private static Polygon polygon;		//Singleton
     
     private Polygon(FileReader read, BufferedImage newImage) throws IOException {
         nrNodes = read.nextInt();

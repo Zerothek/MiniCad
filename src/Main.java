@@ -11,6 +11,8 @@ import fileio.implementations.FileReader;
 
 public class Main {
     
+	/*This function returns an int corresponding to a hexa color represented as a string
+	 * Ex: #FFFFA1*/
     private static int returnColor(String color,int transparency) {
         String R = color.substring(1, 3);
         String G = color.substring(3, 5);
@@ -29,19 +31,20 @@ public class Main {
         FileReader read = new FileReader(input);
         int nrShapes,height,width,transparency;
         String shape,color;
-        nrShapes = read.nextInt();
+        nrShapes = read.nextInt();	/*the number of shapes to be drawn*/
         
         //Drawing the canvas
-        shape = read.nextWord();
-        height = read.nextInt();
-        width = read.nextInt();
-        color = read.nextWord();
-        transparency = read.nextInt();
+        shape = read.nextWord(); 	/*the first shape in the file is always the canvas*/
+        height = read.nextInt();	/*the height of the canvas*/
+        width = read.nextInt();		/*the width of the canvas*/
+        color = read.nextWord();	/*the color of the canvas*/
+        transparency = read.nextInt();	/*the transparency of the canvas*/
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 
         int rgb = returnColor(color, transparency);
         
 
+        /*Draw the backround*/
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
                 image.setRGB(x, y,rgb);
@@ -53,6 +56,8 @@ public class Main {
         DrawShape draw = new DrawShape();
         ShapeFactory shapeFactory = new ShapeFactory();
         
+        /*Read the next shapes which are to be drawn(and their parameters) from the file
+          and draw them.*/
         while(nrShapes > 0) {
             
             nrShapes--;
@@ -95,6 +100,7 @@ public class Main {
              
         }
 
+        /*Create the PNG file*/
         ImageIO.write(image, "PNG", new File("drawing.png"));
     }
 }
